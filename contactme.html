@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Me</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="./images/DD.png" class="logo">
+      <a href="homepage.html" target="_blank">Home</a>
+        <a href="about.html" target="_blank">About</a>
+        <a href="document.html" target="_blank">Documents</a>
+        <a href="references.html" target="_blank">References</a>
+        <a href="photogallery.html" target="_blank">Photo Gallery</a>
+        <a href="contactme.html" target="_blank">Contact Me</a>
+    </nav>
+    <!-- Navigation bar or logo can be added here -->
+  </header>
+  
+
+  <main>
+    <section id="contact">
+      <h1 style="text-align: center;">Contact Me</h1>
+      <form id="contact-form" action="submitForm()" method="POST">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+         <br>
+        <div>
+          <label for="subject">Subject:</label>
+          <input type="text"  id="subject" name="subject" required</input>
+        </div>
+         <br>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+         <br>
+        <div>
+          <label for="phone">Phone:</label>
+          <input type="number" id="phone" name="phone" required>
+        </div>
+       <br>
+        <div>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <br>
+        <div>
+          <button type="submit">Submit</button>
+          <button id="reset-button" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="https://twitter.com/odehyiedarling?t=z6BaxLZrHRo-rMgLP7BBjA&s=09">Twitter</a>
+      <a href="https://www.instagram.com/">Instagram</a>
+      <a href="https://m.facebook.com/">Facebook</a>
+      <a href="https://api.whatsapp.com/send?phone=233550587832">Whatsapp</a>
+    </nav>
+    <!-- Footer content can be added here -->
+  </footer>
+  <script>
+    function submitForm(event) {
+    event.preventDefault(); // Prevent form submission from reloading the page
+  
+    // Get form values
+    var name = document.getElementById('name').value;
+    var subject = document.getElementById('subject').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var message = document.getElementById('message').value;
+  
+    // Validate form fields (you can add more validation logic as needed)
+    if (!name || !subject || !email || !phone || !message) {
+      alert('Please fill in all fields');
+      return;
+    }
+  
+    // Perform further processing or submit the form to the server
+    // You can make an AJAX request here to send form data to the server
+  
+    // Clear form fields after submission
+    document.getElementById('name').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('message').value = '';
+  
+    alert('Form submitted successfully');
+  }
+  
+  // Function to handle form reset
+  function resetForm() {
+    // Reset form fields
+    document.getElementById('name').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('message').value = '';
+  }
+  
+  // Attach event listeners to form elements
+  document.getElementById('contact-form').addEventListener('submit', submitForm);
+  document.getElementById('reset-button').addEventListener('click', resetForm);
+
+  </script>
+</body>
+</html>
